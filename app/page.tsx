@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/mode-toggle";
 import { MainNav } from "@/components/main-nav";
+import { Footer } from "@/components/footer-web";
 
 export default function Home() {
   return (
@@ -12,7 +13,7 @@ export default function Home() {
           <ModeToggle />
         </div>
       </div>
+      <Footer />
     </>
-
   );
 }
