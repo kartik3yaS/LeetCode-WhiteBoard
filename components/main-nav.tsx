@@ -13,12 +13,21 @@ export function MainNav() {
         <>
             <div className="p-3 hidden md:flex flex-grow justify-between">
                 <div className="flex items-center space-x-6">
-                    <Link href="/" className="mr-6 ml-5 flex items-center space-x-2">
+                    <Link href="/" className="mr-5 ml-5 flex items-center space-x-2">
                         <span className="hidden text-xl font-bold sm:inline-block">
                             LC Board
                         </span>
                     </Link>
                     <nav className="flex items-center gap-4 text-sm lg:gap-6">
+                    <Link
+                        href="https://leetcode.com/explore/"
+                        className={cn(
+                            "transition-colors hover:text-foreground/80",
+                            pathname === "https://leetcode.com/explore/" ? "text-foreground" : "text-foreground/60"
+                        )}
+                        >
+                            <span className="text-lg">Explore</span>
+                        </Link>
                         <Link
                         href="https://leetcode.com/problemset/"
                         className={cn(
@@ -27,6 +36,15 @@ export function MainNav() {
                         )}
                         >
                             <span className="text-lg">Problems</span>
+                        </Link>
+                        <Link
+                        href="https://leetcode.com/contest/"
+                        className={cn(
+                            "transition-colors hover:text-foreground/80",
+                            pathname === "https://leetcode.com/contest/" ? "text-foreground" : "text-foreground/60"
+                        )}
+                        >
+                            <span className="text-lg">Contest</span>
                         </Link>
                     </nav>
                 </div>
