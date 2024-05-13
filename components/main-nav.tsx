@@ -6,6 +6,8 @@ import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { ModeToggle } from "./mode-toggle"
 import { ViewVerticalIcon } from "@radix-ui/react-icons"
+import { Icons } from "./icons";
+import whiteboard from "./assets/whiteboard.png";
 
 export function MainNav() {
     const pathname = usePathname()
@@ -14,7 +16,7 @@ export function MainNav() {
         <>
             <div className="mr-4 hidden md:flex">
                 <Link href="/" className="mr-6 flex items-center space-x-2">
-                    {/* <Icons.logo className="h-6 w-6" /> */}
+                    <Icons.logo className="h-6 w-6" />
                     <span className="hidden font-bold sm:inline-block">
                         LC Board
                     </span>

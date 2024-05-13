@@ -30,8 +30,9 @@ export default function RootLayout({
         >
           <SiteHeader />
             {children}
+          <Footer />
         </ThemeProvider>
-        <Footer />
+        {/*<Footer />*/}
       </body>
     </html>
   );
