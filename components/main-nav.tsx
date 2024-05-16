@@ -4,10 +4,7 @@ import * as React from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
-import { ModeToggle } from "./mode-toggle"
-import { ViewVerticalIcon } from "@radix-ui/react-icons"
 import { Icons } from "./icons";
-import whiteboard from "./assets/whiteboard.png";
 
 export function MainNav() {
     const pathname = usePathname()
@@ -23,7 +20,7 @@ export function MainNav() {
                 </Link>
                 <nav className="flex items-center gap-4 text-sm lg:gap-6">
                     <Link
-                    href="/docs"
+                    href="/explore"
                     className={cn(
                         "transition-colors hover:text-foreground/80",
                         pathname === "/docs" ? "text-foreground" : "text-foreground/60"
@@ -32,16 +29,16 @@ export function MainNav() {
                         Explore
                     </Link>
                     <Link
-                    href="/docs"
+                    href="/problems"
                     className={cn(
                         "transition-colors hover:text-foreground/80",
-                        pathname === "/docs" ? "text-foreground" : "text-foreground/60"
+                        pathname === "/problems" ? "text-foreground" : "text-foreground/60"
                     )}
                     >
                         Problems
                     </Link>
                     <Link
-                    href="/docs"
+                    href="/contest"
                     className={cn(
                         "transition-colors hover:text-foreground/80",
                         pathname === "/docs" ? "text-foreground" : "text-foreground/60"

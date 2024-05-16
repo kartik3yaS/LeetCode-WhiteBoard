@@ -1,8 +1,6 @@
 import { MainNav } from "./main-nav";
 import { MobileNav } from "./mobile-nav";
-import { buttonVariants } from "./ui/button";
 import { ModeToggle } from "./mode-toggle";
-import { Icons } from "./icons";
 import { CommandMenu } from "./command-menu";
 
 export function SiteHeader() {
