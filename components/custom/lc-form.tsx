@@ -16,22 +16,20 @@ import {
   FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
-import { useState } from "react"
 
 const formSchema = z.object({
-    id: z.string().min(1, {
-      message: "ID must be at least 1 digit.",
+    id: z.number().int().positive({
+      message: "ID must be a positive number.",
     }),
 })
 
 export function MyForm() {
     const router = useRouter();
-    const [id, setId] = useState("");
 
     const form = useForm<z.infer<typeof formSchema>>({
         // resolver: zodResolver(formSchema),
         defaultValues: {
-          id: "",
+          id: undefined,
         },
     })
 
