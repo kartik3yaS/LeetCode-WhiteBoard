@@ -51,7 +51,7 @@ export function MyForm() {
                     <Input placeholder="Enter the problem ID" {...field} />
                     </FormControl>
                     <FormDescription>
-                        It will redirect you to the problem.
+                        Redirects you to the specific problem whiteboard.
                     </FormDescription>
                     <FormMessage />
                 </FormItem>
