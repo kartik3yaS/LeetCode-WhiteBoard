@@ -4,7 +4,8 @@ import * as React from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
-import { Icons } from "./icons";
+import Image from 'next/image'
+import whiteboard from "./assets/whiteboard.png";
 
 export function MainNav() {
     const pathname = usePathname()
@@ -12,8 +13,8 @@ export function MainNav() {
     return (
         <>
             <div className="mr-4 hidden md:flex">
-                <Link href="/" className="mr-6 flex items-center space-x-2">
-                    <Icons.logo className="h-6 w-6" />
+                <Image src={whiteboard} alt="" className="h-9 w-9 rounded-lg" />
+                <Link href="/" className="ml-3 mr-6 flex items-center space-x-2">
                     <span className="hidden font-bold sm:inline-block">
                         LC Board
                     </span>
