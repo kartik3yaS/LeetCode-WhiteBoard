@@ -16,9 +16,10 @@ FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 
-const formSchema = z.object({
+  const formSchema = z.object({
     id: z
       .string() // Accept a string input
+      .transform((val) => val.replace(/^0+/, "")) // Remove leading zeros
       .refine((val) => /^\d+$/.test(val), {
         message: "ID must be a positive integer",
       }) // Validate if it's a valid integer
