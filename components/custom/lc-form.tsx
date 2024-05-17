@@ -1,35 +1,39 @@
 "use client"
- 
-// import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form"
-import { useRouter } from "next/navigation"
+    
 import { z } from "zod"
- 
+import { useForm } from "react-hook-form"
+import {zodResolver} from '@hookform/resolvers/zod'
+import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
+Form,
+FormControl,
+FormDescription,
+FormField,
+FormItem,
+FormLabel,
+FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 
 const formSchema = z.object({
-    id: z.number().int().positive({
-      message: "ID must be a positive number.",
-    }),
-})
+    id: z
+      .string() // Accept a string input
+      .refine((val) => /^\d+$/.test(val), {
+        message: "ID must be a positive integer",
+      }) // Validate if it's a valid integer
+      .refine((val) => parseInt(val) > 0, {
+        message: "ID must be a positive integer",
+      }), // Validate if it's positive
+  });
 
 export function MyForm() {
     const router = useRouter();
 
     const form = useForm<z.infer<typeof formSchema>>({
-        // resolver: zodResolver(formSchema),
+        resolver: zodResolver(formSchema),
         defaultValues: {
-          id: undefined,
+        id: undefined,
         },
     })
 
