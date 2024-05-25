@@ -17,7 +17,7 @@ export const docsConfig: DocsConfig = {
       href: "/problems",
     },
     {
-      title: "Contest",
+       title: "Contest",
       href: "/contest",
     },
   ],
