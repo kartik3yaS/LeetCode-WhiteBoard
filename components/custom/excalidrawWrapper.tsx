@@ -15,10 +15,8 @@ const ExcalidrawWrapper: React.FC = () => {
   // },]));
 
   return (
-    <div className="h-screen flex justify-center items-center max-w-screen-2xl">
-      {/* <div className="flex-1 max-w-screen-lg rounded-lg"> */}
+    <div style={{ height: "calc(100vh - 3.5rem)" }} className="flex z-150">
       <Excalidraw />
-      {/* </div> */}
     </div>
   );
 };
